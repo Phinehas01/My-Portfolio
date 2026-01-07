@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
           //MAIN
          // HeaderDesktop(),
           HeaderMobile(
+            onLogoTap: () {},
             onMenuTap: () {},
           ),
           //SKILLS
