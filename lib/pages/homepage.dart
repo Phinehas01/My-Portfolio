@@ -4,6 +4,8 @@ import 'package:my_portfolio/constants/size.dart';
 import 'package:my_portfolio/widgets/drawerMobile.dart';
 import 'package:my_portfolio/widgets/headerDesktop.dart';
 import 'package:my_portfolio/widgets/headerMobile.dart';
+import 'package:my_portfolio/widgets/main_desktop.dart';
+import 'package:my_portfolio/widgets/main_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +20,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
+
     return LayoutBuilder(
       builder: (context, Constraints) {
         return Scaffold(
@@ -37,33 +41,11 @@ class _HomePageState extends State<HomePage> {
                     ScaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
-              Container( 
-                margin: const EdgeInsets.symmetric(horizontal: 20.0),
-                height: screenSize.height/1.2,
-                constraints: BoxConstraints(minHeight: 350.0
-                  
-                ),
-                child: Row(
-                children: [
-                  Column(
-                    children: [
-                      Text("Hi,\n I'm Phinehas \n A Flutter Developer"),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Get in touch"),
-                      ),
-                    ],
-                  ),  
-                  Image.asset(
-                    "assets/myimage1.png",
-                    width: screenWidth / 2,
-                    fit: BoxFit.cover,
-                    
-                  ),
-                  
-                ],
-              ),
-              ),
+                if (Constraints.maxWidth >= kMinDesktopWidth)
+              const MainDesktop() 
+              else 
+              const MainMobile(),
+              
               //SKILLS
               Container(
                 height: 500,
