@@ -10,8 +10,8 @@ List<String> navTitles = [
 
 List<IconData> navIcons = [
   Icons.home,
-  Icons.code,
-  Icons.work,
+  Icons.handyman_outlined,
+  Icons.apps,
   Icons.article,
   Icons.contact_mail,
 ];

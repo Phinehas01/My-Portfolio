@@ -57,6 +57,18 @@ class _HomePageState extends State<HomePage> {
                 height: 500,
                 width: double.infinity,
                 color: Colors.blueGrey,
+                child: Column(
+                  children: [
+                    Text(
+                      "My Skills",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: 
+                      )
+                    )
+
+                ],)
               ),
               //CONTACT
               Container(
