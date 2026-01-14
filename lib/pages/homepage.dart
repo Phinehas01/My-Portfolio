@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/size.dart';
+import 'package:my_portfolio/constants/skill_items.dart';
 import 'package:my_portfolio/widgets/drawerMobile.dart';
 import 'package:my_portfolio/widgets/headerDesktop.dart';
 import 'package:my_portfolio/widgets/headerMobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
+import 'package:my_portfolio/widgets/skills_Desktop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,53 +65,9 @@ class _HomePageState extends State<HomePage> {
 
                       ),
                     ),
+                    const SizedBox(height: 50),
                    //skill widgets here
-                   Row(
-                    children: [
-                      Wrap(
-                        children: [
-                          ConstrainedBox(
-                            constraints: const BoxConstraints(
-                              maxWidth: 450,
-                            ),
-                            child: Container(
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: CustomColor.bgLight2,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    title: Text("Android Dev", style: TextStyle(color: CustomColor.whitePrimary),),
-                                    leading: Icon(Icons.android, color: CustomColor.whitePrimary,
-                                    ),
-                                    ),
-                                    ListTile(
-                                    title: Text("IOS Dev", style: TextStyle(color: CustomColor.whitePrimary),),
-                                    leading: Icon(Icons.apple, color: CustomColor.whitePrimary,
-                                    ),
-                                    ),
-                                    ListTile(
-                                    title: Text("Web Dev", style: TextStyle(color: CustomColor.whitePrimary),),
-                                    leading: Icon(Icons.language, color: CustomColor.whitePrimary,
-                                    ),
-                                    ),
-                                     ListTile(
-                                    title: Text("Desktop Dev", style: TextStyle(color: CustomColor.whitePrimary),),
-                                    leading: Icon(Icons.desktop_windows_outlined, color: CustomColor.whitePrimary,
-                                    ),
-                                    ),
-
-                                ],
-                              ),
-                               
-                            ),
-                          ),
-                        ],
-                        )
-
-                   ],)
+                    const SkillsDesktop(),
 
                 ],)
               ),
